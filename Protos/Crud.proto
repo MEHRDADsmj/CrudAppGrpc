@@ -9,6 +9,7 @@ service CrudService {
   rpc ReadItem (ReadItemRequest) returns (ReadItemResponse);
   rpc UpdateItem (UpdateItemRequest) returns (UpdateItemResponse);
   rpc DeleteItem (DeleteItemRequest) returns (DeleteItemResponse);
+  rpc ReturnAll (ReturnAllRequest) returns (ReturnAllResponse);
 }
 
 message Item {
@@ -50,4 +51,12 @@ message DeleteItemRequest {
 
 message DeleteItemResponse {
   bool success = 1;
+}
+
+message ReturnAllRequest{
+
+}
+
+message ReturnAllResponse{
+  repeated Item items = 1;
 }
